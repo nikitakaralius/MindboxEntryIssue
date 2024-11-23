@@ -6,7 +6,7 @@ public sealed record Circle : IFigure
 {
     public double Radius { get; }
 
-    private Circle(double radius)
+    public Circle(double radius)
     {
         ArgumentOutOfRangeException.ThrowIfNegative(radius);
         Radius = radius;
