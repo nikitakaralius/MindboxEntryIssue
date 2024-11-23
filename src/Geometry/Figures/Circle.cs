@@ -8,7 +8,7 @@ public sealed record Circle : IFigure
 
     public Circle(double radius)
     {
-        ArgumentOutOfRangeException.ThrowIfNegative(radius);
+        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(radius);
         Radius = radius;
     }
 
