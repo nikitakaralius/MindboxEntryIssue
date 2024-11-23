@@ -9,11 +9,11 @@ public sealed record Triangle : IFigure
     public double B { get; }
     public double C { get; }
 
-    private Triangle(double a, double b, double c)
+    public Triangle(double a, double b, double c)
     {
-        ArgumentOutOfRangeException.ThrowIfNegative(a);
-        ArgumentOutOfRangeException.ThrowIfNegative(b);
-        ArgumentOutOfRangeException.ThrowIfNegative(c);
+        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(a);
+        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(b);
+        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(c);
 
         if (!DoesTriangleExist(a, b, c))
             throw new TriangleInequalityException(a, b, c);
