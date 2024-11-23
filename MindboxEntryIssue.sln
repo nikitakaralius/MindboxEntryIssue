@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FDE41A83-9164-4911-9B6C-268DEA6B3DA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{97AAFAC8-CCA5-4A5D-98AD-3C267CD70FF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geometry", "src\Geometry\Geometry.csproj", "{8E8F72B3-C39A-4EC5-B57D-5887E5C3A9DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geometry.Tests", "tests\Geometry.Tests\Geometry.Tests.csproj", "{6D8CAE12-B9F1-4956-B400-80861949C03B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sln", "sln", "{653283A1-F606-4780-B6AD-ED0B3D2C4A7C}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		Readme.md = Readme.md
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{8A3EF4BC-00AB-41EB-8658-0DBE0981BD3D}"
+	ProjectSection(SolutionItems) = preProject
+		init.sql = init.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8E8F72B3-C39A-4EC5-B57D-5887E5C3A9DF} = {FDE41A83-9164-4911-9B6C-268DEA6B3DA4}
+		{6D8CAE12-B9F1-4956-B400-80861949C03B} = {97AAFAC8-CCA5-4A5D-98AD-3C267CD70FF1}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E8F72B3-C39A-4EC5-B57D-5887E5C3A9DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E8F72B3-C39A-4EC5-B57D-5887E5C3A9DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E8F72B3-C39A-4EC5-B57D-5887E5C3A9DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E8F72B3-C39A-4EC5-B57D-5887E5C3A9DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D8CAE12-B9F1-4956-B400-80861949C03B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D8CAE12-B9F1-4956-B400-80861949C03B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D8CAE12-B9F1-4956-B400-80861949C03B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D8CAE12-B9F1-4956-B400-80861949C03B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
