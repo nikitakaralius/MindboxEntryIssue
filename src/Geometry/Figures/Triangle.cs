@@ -37,7 +37,7 @@ public sealed record Triangle : IFigure
         }
     }
 
-    public bool IsRight
+    public bool IsRightAngled
     {
         get
         {

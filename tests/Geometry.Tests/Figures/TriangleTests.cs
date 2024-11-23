@@ -75,7 +75,7 @@ public class TriangleTests
         var triangle = new Triangle(3, 4, 5);
 
         // Act
-        var isRight = triangle.IsRight;
+        var isRight = triangle.IsRightAngled;
 
         // Assert
         isRight
@@ -90,7 +90,7 @@ public class TriangleTests
         var triangle = new Triangle(2, 2, 3);
 
         // Act
-        var isRight = triangle.IsRight;
+        var isRight = triangle.IsRightAngled;
 
         // Assert
         isRight
