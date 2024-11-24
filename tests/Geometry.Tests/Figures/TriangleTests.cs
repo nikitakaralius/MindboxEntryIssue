@@ -69,7 +69,7 @@ public class TriangleTests
     }
 
     [Fact]
-    public void IsRight_RightTriangle_ReturnsTrue()
+    public void IsRightAngled_RightTriangle_ReturnsTrue()
     {
         // Arrange
         var triangle = new Triangle(3, 4, 5);
@@ -84,7 +84,7 @@ public class TriangleTests
     }
 
     [Fact]
-    public void IsRight_NonRightTriangle_ReturnsFalse()
+    public void IsRightAngled_NonRightTriangle_ReturnsFalse()
     {
         // Arrange
         var triangle = new Triangle(2, 2, 3);
