@@ -1,62 +1,55 @@
-CREATE DATABASE Storehouse
+BEGIN TRANSACTION;
+
 GO
 
+CREATE SCHEMA [Storehouse];
 
-USE [Storehouse]
 GO
 
-CREATE TABLE [dbo].[Products](
-    [Id] [int] IDENTITY(1, 1),
-    [Name] [nvarchar](256) NOT NULL)
+CREATE TABLE [Storehouse].[Products]
+(
+    [Id]   INT IDENTITY (1, 1) PRIMARY KEY,
+    [Name] NVARCHAR(128) NOT NULL
+);
+
+CREATE TABLE [Storehouse].[Categories]
+(
+    [Id]   INT IDENTITY (1, 1) PRIMARY KEY,
+    [Name] NVARCHAR(128) NOT NULL
+);
+
+CREATE TABLE [Storehouse].[ProductCategories]
+(
+    [ProductId]  INT NOT NULL REFERENCES [Storehouse].[Products] ([Id])
+        ON UPDATE CASCADE
+        ON DELETE CASCADE,
+    [CategoryId] INT NOT NULL REFERENCES [Storehouse].[Categories] ([Id])
+        ON UPDATE CASCADE
+        ON DELETE CASCADE,
+    PRIMARY KEY ([ProductId], [CategoryId])
+);
+
 GO
 
-ALTER TABLE [dbo].[Products]
-    ADD CONSTRAINT [PK_Products_Id] PRIMARY KEY CLUSTERED (Id)
-    GO
+INSERT INTO [Storehouse].[Products] ([Name])
+VALUES ('iPhone'),
+       ('MacBook'),
+       ('Pineapple'),
+       ('IDE Subscription');
 
 
-USE [Storehouse]
+INSERT INTO [Storehouse].[Categories] ([Name])
+VALUES ('Electronics'),
+       ('Phones'),
+       ('Groceries'),
+       ('Health');
+
+INSERT INTO [Storehouse].[ProductCategories] ([ProductId], [CategoryId])
+VALUES (1, 1),
+       (1, 2),
+       (2, 1),
+       (3, 3);
+
 GO
 
-CREATE TABLE [dbo].[Categories](
-    [Id] [int] IDENTITY(1, 1),
-    [Name] [nvarchar](256) NOT NULL
-    )
-    GO
-
-ALTER TABLE [dbo].[Categories]
-    ADD CONSTRAINT [PK_Categories_Id] PRIMARY KEY CLUSTERED (Id)
-    GO
-
-ALTER TABLE [dbo].[Categories]
-    ADD CONSTRAINT [Unique_Categories_Name] UNIQUE ([Name])
-    GO
-
-
-USE [Storehouse]
-GO
-
-CREATE TABLE [dbo].[ProductCategories](
-    [Id] [int] IDENTITY(1, 1),
-    [ProductId] [int] NOT NULL,
-    [CategoryId] [int] NULL
-    )
-    GO
-
-ALTER TABLE [dbo].[ProductCategories]
-    ADD CONSTRAINT [PK_ProductCategories_Id] PRIMARY KEY CLUSTERED (Id)
-    GO
-
-ALTER TABLE [dbo].[ProductCategories]
-WITH CHECK ADD CONSTRAINT [FK_ProductCategories_ProductId] FOREIGN KEY (ProductId)
-REFERENCES [dbo].[Products] (Id)
-ON UPDATE CASCADE
-ON DELETE CASCADE
-GO
-
-ALTER TABLE [dbo].[ProductCategories]
-WITH CHECK ADD CONSTRAINT [FK_ProductCategories_CategoryId] FOREIGN KEY (CategoryId)
-REFERENCES [dbo].[Categories] (Id)
-ON UPDATE CASCADE
-ON DELETE SET NULL
-GO
+COMMIT TRANSACTION;
