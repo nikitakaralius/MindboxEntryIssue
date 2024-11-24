@@ -1,6 +1,6 @@
 namespace Geometry.Exceptions;
 
-public sealed class TriangleInequalityException(double a, double b, double c) : Exception
+internal sealed class TriangleInequalityException(double a, double b, double c) : Exception
 {
     public override string Message =>
         $"Triangle with sides {FormatSides()} can not exist due to Triangle Inequality";
