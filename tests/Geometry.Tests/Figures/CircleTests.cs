@@ -5,6 +5,22 @@ namespace Geometry.Tests.Figures;
 
 public class CircleTests
 {
+    [Fact]
+    public void Constructor_RadiusIsCorrect_ShouldCreateTriangle()
+    {
+        // Arrange
+        const double radius = 5;
+
+        // Act
+        var circle = new Circle(radius);
+
+        // Assert
+        circle
+           .Radius
+           .Should()
+           .Be(radius);
+    }
+
     [Theory]
     [InlineData(0)]
     [InlineData(-5)]

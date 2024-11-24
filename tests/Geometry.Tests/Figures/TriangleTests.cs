@@ -7,7 +7,7 @@ namespace Geometry.Tests.Figures;
 public class TriangleTests
 {
     [Fact]
-    public void Constructor_SidesAreValid_CreatesTriangle()
+    public void Constructor_SidesAreValid_ShouldCreateTriangle()
     {
         // Arrange
         const double a = 3, b = 4, c = 5;
@@ -28,7 +28,7 @@ public class TriangleTests
     [InlineData(0, 2, 3)]
     [InlineData(1, 0, 3)]
     [InlineData(1, 2, 0)]
-    public void Constructor_OneOfSideIsNegativeOrZero_ThrowsArgumentOutOfRangeException(double a, double b, double c)
+    public void Constructor_OneOfSideIsNegativeOrZero_ShouldThrowArgumentOutOfRangeException(double a, double b, double c)
     {
         // Act
         var create = () => new Triangle(a, b, c);
@@ -42,7 +42,7 @@ public class TriangleTests
     [Theory]
     [InlineData(1, 2, 3)]
     [InlineData(1, 10, 12)]
-    public void Constructor_InvalidTriangleSides_ThrowsTriangleInequalityException(double a, double b, double c)
+    public void Constructor_InvalidTriangleSides_ShouldThrowTriangleInequalityException(double a, double b, double c)
     {
         // Act
         var create = () => new Triangle(a, b, c);
@@ -54,7 +54,7 @@ public class TriangleTests
     }
 
     [Fact]
-    public void Area_TriangleInvalid_ReturnsCorrectArea()
+    public void Area_TriangleInvalid_ShouldReturnCorrectArea()
     {
         // Arrange
         var triangle = new Triangle(3, 4, 5);
@@ -69,7 +69,7 @@ public class TriangleTests
     }
 
     [Fact]
-    public void IsRightAngled_RightTriangle_ReturnsTrue()
+    public void IsRightAngled_RightTriangle_ShouldBeTrue()
     {
         // Arrange
         var triangle = new Triangle(3, 4, 5);
@@ -84,7 +84,7 @@ public class TriangleTests
     }
 
     [Fact]
-    public void IsRightAngled_NonRightTriangle_ReturnsFalse()
+    public void IsRightAngled_NonRightTriangle_ShouldBeFalse()
     {
         // Arrange
         var triangle = new Triangle(2, 2, 3);
