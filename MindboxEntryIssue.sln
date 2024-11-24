@@ -20,7 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sln", "sln", "{653283A1-F60
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{8A3EF4BC-00AB-41EB-8658-0DBE0981BD3D}"
 	ProjectSection(SolutionItems) = preProject
-		init.sql = init.sql
+		sql\init.sql = sql\init.sql
 	EndProjectSection
 EndProject
 Global
