@@ -10,15 +10,15 @@ public class TriangleTests
     public void Constructor_SidesAreValid_CreatesTriangle()
     {
         // Arrange
-        double a = 3, b = 4, c = 5;
+        const double a = 3, b = 4, c = 5;
 
         // Act
-        var create = () => new Triangle(a, b, c);
+        var triangle = new Triangle(a, b, c);
 
         // Assert
-        create
-           .Should()
-           .NotThrow();
+        triangle.A.Should().Be(a);
+        triangle.B.Should().Be(b);
+        triangle.C.Should().Be(c);
     }
 
     [Theory]
